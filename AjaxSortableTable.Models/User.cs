@@ -13,12 +13,7 @@ namespace AjaxSortableTable.Models
         public Sex Sex { get; set; }
 
         public string Telephone { get; set; }
-
-        [Display(Name = "Status")]
-        public int StatusId { get; set; }
-
+        
         public virtual UserStatus Status { get; set; }
     }
-}
-
 }

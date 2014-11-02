@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxSortableTable.Models", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxSortableTable.PopulateDbWithUsers", "AjaxSortableTable.PopulateDbWithUsers\AjaxSortableTable.PopulateDbWithUsers.csproj", "{9F7F8809-4D96-4281-8537-E3CAE03623F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxSortableTable.Mvc", "AjaxSortableTable.Mvc\AjaxSortableTable.Mvc.csproj", "{C66CAB30-B9EA-432E-8A3A-610BD876356A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9F7F8809-4D96-4281-8537-E3CAE03623F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F7F8809-4D96-4281-8537-E3CAE03623F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F7F8809-4D96-4281-8537-E3CAE03623F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C66CAB30-B9EA-432E-8A3A-610BD876356A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C66CAB30-B9EA-432E-8A3A-610BD876356A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C66CAB30-B9EA-432E-8A3A-610BD876356A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C66CAB30-B9EA-432E-8A3A-610BD876356A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,14 @@
+﻿@for (int i = Model[0]; i < Model[1]; i++)
+{
+    <li>
+        @Ajax.ActionLink(i.ToString(),
+            "AjaxSortableTable",
+            "Users",
+            new { sortOrder = ViewBag.CurrentSortOrder, currentFilter = ViewBag.CurrentSortParm, currentPage = i },
+            new AjaxOptions()
+            {
+                HttpMethod = "GET",
+                UpdateTargetId = "unobtrusive"
+            })
+    </li>
+}

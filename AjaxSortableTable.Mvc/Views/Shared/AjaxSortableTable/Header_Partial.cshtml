@@ -1,0 +1,67 @@
+﻿@model List<string>
+
+<tr>
+    @for (int i = 2; i < Model.Count; i++)
+    {
+        if (Model[0] != Model[i])
+        {
+            <th>
+                @Ajax.ActionLink(
+                    Model[i],
+                    "AjaxSortableTable",
+                    "Users",
+                      new
+                      {
+                          sortOrder = "asc",
+                          currentFilter = Model[i]
+                      },
+                    new AjaxOptions()
+                    {
+                        HttpMethod = "GET",
+                        UpdateTargetId = "unobtrusive",
+                    })
+            </th>
+        }
+        else if (Model[1] == "asc")
+        {
+            <th>
+                @Ajax.ActionLink(
+                    Model[i],
+                    "AjaxSortableTable",
+                    "Users",
+                      new
+                      {
+                          sortOrder = "desc",
+                          currentFilter = Model[i]
+                      },
+                    new AjaxOptions()
+                    {
+                        HttpMethod = "GET",
+                        UpdateTargetId = "unobtrusive"
+                    })
+            </th>
+        }
+        else
+        {
+            <th>
+                @Ajax.ActionLink(
+                    Model[i],
+                    "AjaxSortableTable",
+                    "Users",
+                      new
+                      {
+                          sortOrder = "asc",
+                          currentFilter = Model[i]
+                      },
+                    new AjaxOptions()
+                    {
+                        HttpMethod = "GET",
+                        UpdateTargetId = "unobtrusive"
+                    })
+            </th>
+        }
+    }
+    <th>
+
+    </th>
+</tr>

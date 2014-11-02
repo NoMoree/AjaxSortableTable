@@ -1,0 +1,62 @@
+﻿<div class="selection">
+    <div>
+        @using (Ajax.BeginForm(
+            "AjaxSortableTable",
+            "Users",
+            new
+            {
+                filterStatus = 2
+            },
+            new AjaxOptions()
+            {
+                HttpMethod = "GET",
+                UpdateTargetId = "unobtrusive"
+            }))
+{
+    <input type="submit" value="Activ" style=" font-size:x-large" />
+}
+    </div>
+    <div>
+        @using (Ajax.BeginForm(
+            "AjaxSortableTable",
+            "Users",
+            new
+            {
+                filterStatus = 0
+            },
+            new AjaxOptions()
+            {
+                HttpMethod = "GET",
+                UpdateTargetId = "unobtrusive"
+            }))
+        {
+            <input type="submit" value="Activ/Inactiv" class="btn-Active-Inactiv" style="font-size:x-large" />
+        }
+    </div>
+    <div>
+        @using (Ajax.BeginForm(
+            "AjaxSortableTable",
+            "Users",
+            new
+            {
+                filterStatus = 1
+            },
+            new AjaxOptions()
+            {
+                HttpMethod = "GET",
+                UpdateTargetId = "unobtrusive"
+            }))
+        {
+            <input type="submit" value="Action" class="btn-Inactiv" style="font-size:x-large" />
+        }
+    </div>
+</div>
+
+<style type="text/css">
+    .selection {
+        text-align: center;
+    }
+        .selection > div {
+            display: inline-block;
+        }
+</style>

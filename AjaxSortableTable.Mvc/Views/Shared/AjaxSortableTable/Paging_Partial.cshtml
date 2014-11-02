@@ -1,0 +1,46 @@
+﻿@{
+    int cornerSideVisibleCnt = 4;
+    int nearbyCurrentVisibleCnt = 4;
+    int maxCnt = 20;
+}
+
+<div class="pagination-container">
+    <ul class="pagination">
+        @if (ViewBag.TotalPages > maxCnt)
+        {
+            if (ViewBag.CurrentPage <
+                cornerSideVisibleCnt + nearbyCurrentVisibleCnt + nearbyCurrentVisibleCnt / 2)
+            {
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { 0, ViewBag.CurrentPage })
+                <li class="active"><a>@ViewBag.CurrentPage</a></li>
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { ViewBag.CurrentPage + 1, cornerSideVisibleCnt + nearbyCurrentVisibleCnt * 2 })
+                <li class="disabled PagedList-ellipses"><a>…</a></li>
+                <li class="disabled PagedList-ellipses"><a>…</a></li>
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { ViewBag.TotalPages - cornerSideVisibleCnt, ViewBag.TotalPages })
+            }
+            else if (ViewBag.TotalPages - ViewBag.CurrentPage < cornerSideVisibleCnt + nearbyCurrentVisibleCnt + nearbyCurrentVisibleCnt / 2 - 1)
+            {
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { 0, cornerSideVisibleCnt })
+                <li class="disabled PagedList-ellipses"><a>…</a></li>
+                <li class="disabled PagedList-ellipses"><a>…</a></li>
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { ViewBag.TotalPages - cornerSideVisibleCnt - nearbyCurrentVisibleCnt * 2, ViewBag.CurrentPage })
+                <li class="active"><a>@ViewBag.CurrentPage</a></li>
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { ViewBag.CurrentPage + 1, ViewBag.TotalPages })
+            }
+            else
+            {
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { 0, cornerSideVisibleCnt })
+                <li class="disabled PagedList-ellipses"><a>…</a></li>
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { ViewBag.CurrentPage - nearbyCurrentVisibleCnt, ViewBag.CurrentPage })
+                <li class="active"><a>@ViewBag.CurrentPage</a></li>
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { ViewBag.CurrentPage + 1, ViewBag.CurrentPage + nearbyCurrentVisibleCnt })
+                <li class="disabled PagedList-ellipses"><a>…</a></li>
+                @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { ViewBag.TotalPages - cornerSideVisibleCnt, ViewBag.TotalPages })
+            }
+        }
+        else
+        {
+            @Html.Partial("AjaxSortableTable/PagingParts_Partial", new int[] { 0, ViewBag.TotalPages })
+        }
+    </ul>
+</div>
